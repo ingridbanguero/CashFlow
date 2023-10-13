@@ -11,11 +11,11 @@
                 :amount="amount"
             >
                 <template #graphic>
-                    graphic
+                    <Graphic :amounts="amounts" />
                 </template>
 
-                <template #action>
-                    actions
+                <template #actions>
+                    <Action/>
                 </template>
             </Resumen>
         </template>
@@ -34,18 +34,24 @@
     import Header from "@/components/Header.vue";
     import Resumen from "@/components/Resumen.vue";
     import Movements from "@/components/Movements.vue";
+    import Action from "./Action.vue";
+    import Graphic from "./Graphic.vue";
+
     export default {
         name: "Home",
         components: {
             Layout,
             Header,
             Resumen,
-            Movements
+            Movements,
+            Action,
+            Graphic,
         },
         data() {
             return {
                 amount: null,
                 label: null,
+                amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500],
                 movements: [
                     {
                         id: 1,
@@ -63,7 +69,7 @@
                         id: 3,
                         title: "Movimiento 3",
                         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        amount: 3000,
+                        amount: -3000,
                     },
                     {
                         id: 4,
@@ -102,7 +108,8 @@
                         amount: 3000,
                     }
             
-                ]
+                ], 
+                
             }
         },
     }
