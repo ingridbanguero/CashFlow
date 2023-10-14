@@ -11,7 +11,7 @@
                 :amount="amount"
             >
                 <template #graphic>
-                    <Graphic :amounts="amounts" @select="onSelect"/>
+                    <Graphic :amounts="amounts" @select="select"/>
                 </template>
 
                 <template #actions>
@@ -51,7 +51,6 @@
             return {
                 amount: null,
                 label: null,
-                amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500],
                 movements: [], 
                 
             }

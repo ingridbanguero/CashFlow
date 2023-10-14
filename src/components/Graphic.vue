@@ -31,7 +31,6 @@
         />
       </svg>
       <p>Últimos 30 días</p>
-      <div>{{ amounts }}</div>
     </div>
 </template>
   
@@ -78,10 +77,8 @@
   const emit = defineEmits(["select"]);
 
   watch(pointer, (value) => {
-    console.log("Change")
     const index = Math.ceil((value / (300 / amounts.value.length)));
     if(index < 0 || index > amounts.value.length) return;
-    console.log(amounts.value[index - 1])
     emit("select", amounts.value[index - 1]);
   })
   
